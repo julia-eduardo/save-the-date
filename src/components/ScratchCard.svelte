@@ -27,6 +27,8 @@
 
   const fadeDuration = reducedMotion ? 0 : 300;
 
+  let scratchCount = 0;
+
   onMount(() => {
     const dpr = window.devicePixelRatio || 1;
     canvas.width = wrapper.offsetWidth * dpr;
@@ -58,7 +60,8 @@
 
     playScratchSound();
 
-    if (getRevealPercentage(canvas) >= REVEAL_THRESHOLD) {
+    scratchCount++;
+    if (scratchCount % 5 === 0 && getRevealPercentage(canvas) >= REVEAL_THRESHOLD) {
       triggerReveal();
     }
   }
@@ -70,7 +73,7 @@
     setTimeout(() => {
       canvasRemoved = true;
       onRevealed();
-    }, fadeDuration + 700);
+    }, reducedMotion ? 0 : fadeDuration + 700);
   }
 
   function handlePointerDown(e) {

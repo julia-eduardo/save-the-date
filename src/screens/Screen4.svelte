@@ -40,7 +40,8 @@
           class="inline-block bg-green-w text-cream font-sans font-semibold
                  px-8 py-3 rounded-full text-base
                  hover:bg-green-w/90 active:scale-95
-                 transition-all duration-150"
+                 transition-all duration-150
+                 focus-visible:ring-2 focus-visible:ring-green-w focus-visible:ring-offset-2"
         >
           Ver site do casamento
         </a>
