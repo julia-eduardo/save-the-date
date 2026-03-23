@@ -1,6 +1,4 @@
 <script>
-  import HeartPink from '../components/illustrations/HeartPink.svelte';
-  import HeartSmall from '../components/illustrations/HeartSmall.svelte';
   import Sparkle from '../components/illustrations/Sparkle.svelte';
   import WavyCard from '../components/WavyCard.svelte';
 </script>
@@ -12,13 +10,13 @@
     <WavyCard>
       <div class="flex flex-col items-center justify-center h-full text-center">
 
-        <!-- Top decorative row -->
+        <!-- Top sparkles -->
         <div class="flex justify-around items-center w-full mb-4">
-          <Sparkle size={14} color="#f4a7b9" />
-          <HeartPink size={20} />
+          <Sparkle size={12} color="#f4a7b9" />
           <Sparkle size={16} color="#2d5a27" />
-          <HeartPink size={20} />
           <Sparkle size={14} color="#f4a7b9" />
+          <Sparkle size={16} color="#2d5a27" />
+          <Sparkle size={12} color="#f4a7b9" />
         </div>
 
         <!-- Main message -->
@@ -47,11 +45,11 @@
           Ver site do casamento
         </a>
 
-        <!-- Bottom decorative row -->
+        <!-- Bottom sparkles -->
         <div class="flex justify-around items-center w-full mt-4">
-          <HeartSmall size={18} />
-          <HeartPink size={22} />
-          <HeartSmall size={18} />
+          <Sparkle size={14} color="#2d5a27" />
+          <Sparkle size={12} color="#f4a7b9" />
+          <Sparkle size={14} color="#2d5a27" />
         </div>
 
       </div>

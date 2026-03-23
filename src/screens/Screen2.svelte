@@ -1,8 +1,6 @@
 <script>
   import ScratchCard from '../components/ScratchCard.svelte';
   import MonogramJE from '../components/illustrations/MonogramJE.svelte';
-  import HeartPink from '../components/illustrations/HeartPink.svelte';
-  import HeartSmall from '../components/illustrations/HeartSmall.svelte';
   import WavyCard from '../components/WavyCard.svelte';
 
   export let onRevealed = () => {};
@@ -14,16 +12,9 @@
   <div style="width: min(88vw, 360px); aspect-ratio: 3/4;" class="mx-auto">
     <WavyCard>
 
-        <!-- Wedding rings illustration -->
+        <!-- Monogram JE -->
         <div class="flex justify-center shrink-0">
           <MonogramJE />
-        </div>
-
-        <!-- Floating pink hearts -->
-        <div class="flex justify-around items-center mt-1 shrink-0">
-          <HeartPink size={14} />
-          <HeartPink size={20} />
-          <HeartPink size={14} />
         </div>
 
         <!-- Scratch card grows to fill remaining space -->
@@ -41,13 +32,6 @@
               </p>
             </div>
           </ScratchCard>
-        </div>
-
-        <!-- Green hearts below -->
-        <div class="flex justify-around items-center mt-2 shrink-0">
-          <HeartSmall size={18} />
-          <HeartPink size={22} />
-          <HeartSmall size={18} />
         </div>
 
     </WavyCard>

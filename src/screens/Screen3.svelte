@@ -1,7 +1,6 @@
 <script>
   import ScratchCard from '../components/ScratchCard.svelte';
-  import WeddingCake from '../components/illustrations/WeddingCake.svelte';
-  import HeartPink from '../components/illustrations/HeartPink.svelte';
+  import MonogramJE from '../components/illustrations/MonogramJE.svelte';
   import Sparkle from '../components/illustrations/Sparkle.svelte';
   import WavyCard from '../components/WavyCard.svelte';
 
@@ -14,17 +13,15 @@
   <div style="width: min(88vw, 360px); aspect-ratio: 3/4;" class="mx-auto">
     <WavyCard>
 
-        <!-- Wedding cake illustration -->
+        <!-- Monogram JE -->
         <div class="flex justify-center shrink-0">
-          <WeddingCake />
+          <MonogramJE />
         </div>
 
         <!-- Sparkle row -->
         <div class="flex justify-around items-center mt-1 shrink-0">
           <Sparkle size={12} color="#f4a7b9" />
-          <HeartPink size={16} />
           <Sparkle size={14} color="#2d5a27" />
-          <HeartPink size={16} />
           <Sparkle size={12} color="#f4a7b9" />
         </div>
 
