@@ -36,7 +36,7 @@
   $: path = wavyRectPath(w, h);
 </script>
 
-<div class="relative" bind:clientWidth={w} bind:clientHeight={h}>
+<div class="relative h-full" bind:clientWidth={w} bind:clientHeight={h}>
   {#if w && h}
     <svg
       class="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
@@ -55,7 +55,7 @@
     </svg>
   {/if}
 
-  <div class="relative p-7">
+  <div class="relative h-full flex flex-col p-6">
     <slot />
   </div>
 </div>

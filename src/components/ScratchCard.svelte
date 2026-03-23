@@ -101,7 +101,7 @@
   }
 </script>
 
-<div bind:this={wrapper} class="relative">
+<div bind:this={wrapper} class="relative h-full">
   <!-- Slot content sits below the canvas -->
   <slot />
 

@@ -8,12 +8,12 @@
 <div class="min-h-dvh w-full flex items-center justify-center bg-cream"
   style="background-image: repeating-linear-gradient(to right, transparent, transparent 22px, #f9c8d4 22px, #f9c8d4 28px);">
 
-  <div class="w-full max-w-sm mx-4">
+  <div style="width: min(88vw, 360px); aspect-ratio: 3/4;" class="mx-auto">
     <WavyCard>
-      <div class="text-center">
+      <div class="flex flex-col items-center justify-center h-full text-center">
 
         <!-- Top decorative row -->
-        <div class="flex justify-around items-center mb-6">
+        <div class="flex justify-around items-center w-full mb-4">
           <Sparkle size={14} color="#f4a7b9" />
           <HeartPink size={20} />
           <Sparkle size={16} color="#2d5a27" />
@@ -27,9 +27,9 @@
           Julia & Eduardo
         </p>
 
-        <div class="my-5 border-t border-green-w/20" />
+        <div class="my-4 w-full border-t border-green-w/20" />
 
-        <p class="font-sans text-green-w text-base leading-relaxed mb-6">
+        <p class="font-sans text-green-w text-base leading-relaxed mb-5">
           Mais informações e confirmação de presença
         </p>
 
@@ -48,7 +48,7 @@
         </a>
 
         <!-- Bottom decorative row -->
-        <div class="flex justify-around items-center mt-6">
+        <div class="flex justify-around items-center w-full mt-4">
           <HeartSmall size={18} />
           <HeartPink size={22} />
           <HeartSmall size={18} />
