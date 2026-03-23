@@ -28,7 +28,10 @@
         <!-- Scratch card grows to fill remaining space -->
         <div class="flex-1 mt-2">
           <ScratchCard {onRevealed}>
-            <div class="bg-cream h-full flex items-center justify-center text-center px-6">
+            <div class="bg-cream h-full flex flex-col items-center justify-center text-center px-6 gap-4">
+              <p class="font-script text-green-w" style="font-size: clamp(1.6rem, 7vw, 2rem);">
+                Save the date!
+              </p>
               <div class="inline-block border-2 border-green-w rounded-full px-8 py-3">
                 <p class="font-sans font-semibold text-green-w text-xl leading-tight">
                   20 de junho
