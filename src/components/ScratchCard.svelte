@@ -126,10 +126,10 @@
   <!-- Skip button -->
   {#if !revealed}
     <button
-      class="absolute bottom-3 right-3 font-sans text-xs text-green-w/40 hover:text-green-w/70 transition-colors"
+      class="absolute bottom-3 right-3 font-sans text-sm font-bold tracking-widest uppercase text-green-w/60 hover:text-green-w transition-colors"
       on:click={triggerReveal}
     >
-      pular →
+      PULAR →
     </button>
   {/if}
 </div>
