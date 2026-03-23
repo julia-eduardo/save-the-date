@@ -35,7 +35,7 @@
           class="text-center font-sans text-sm text-green-w/60 mt-2 tracking-wide shrink-0"
           style="opacity: {instructionOpacity}; transition: opacity 200ms ease;"
         >
-          ✨ raspe para descobrir ✨
+          ✨ Raspe para descobrir ✨
         </p>
 
         <!-- Scratch card grows to fill remaining space -->
