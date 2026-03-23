@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/svelte';
 import ScratchCard from './ScratchCard.svelte';
 import ScratchCardSlotWrapper from './ScratchCardSlotWrapper.svelte';
@@ -37,6 +37,10 @@ beforeEach(() => {
   });
 });
 
+afterEach(() => {
+  vi.useRealTimers();
+});
+
 describe('ScratchCard', () => {
   it('renders slot content', () => {
     render(ScratchCardSlotWrapper, { props: { onRevealed: vi.fn() } });
@@ -56,6 +60,5 @@ describe('ScratchCard', () => {
     await fireEvent.click(skipBtn);
     await vi.runAllTimersAsync();
     expect(onRevealed).toHaveBeenCalledOnce();
-    vi.useRealTimers();
   });
 });

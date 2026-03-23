@@ -5,7 +5,7 @@
 
   /** Called after the reveal animation completes. */
   export let onRevealed = () => {};
-  /** Called on the first pointerdown while scratching (for parent to react, e.g. fade an instruction). */
+  /** Called on the first pointerdown event (for parent to fade instruction text). */
   export let onFirstScratch = () => {};
 
   const BRUSH_RADIUS = 40;
@@ -18,7 +18,6 @@
   let revealed = false;
   let canvasOpacity = 1;
   let canvasRemoved = false;
-  let instructionVisible = true;
   let firstScratchFired = false;
 
   const reducedMotion =
@@ -71,14 +70,13 @@
     setTimeout(() => {
       canvasRemoved = true;
       onRevealed();
-    }, Math.max(fadeDuration, 300) + 700);
+    }, fadeDuration + 700);
   }
 
   function handlePointerDown(e) {
     if (activePointerId !== null) return;
     activePointerId = e.pointerId;
     isDrawing = true;
-    if (instructionVisible) instructionVisible = false;
     if (!firstScratchFired) {
       firstScratchFired = true;
       onFirstScratch();
