@@ -46,7 +46,7 @@
     >
       <path
         d={path}
-        fill="none"
+        fill="white"
         stroke="#2d5a27"
         stroke-width="2.5"
         stroke-linecap="round"
