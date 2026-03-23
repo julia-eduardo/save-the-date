@@ -1,6 +1,6 @@
 <script>
   import ScratchCard from '../components/ScratchCard.svelte';
-  import WeddingRings from '../components/illustrations/WeddingRings.svelte';
+  import MonogramJE from '../components/illustrations/MonogramJE.svelte';
   import HeartPink from '../components/illustrations/HeartPink.svelte';
   import HeartSmall from '../components/illustrations/HeartSmall.svelte';
   import WavyCard from '../components/WavyCard.svelte';
@@ -16,7 +16,7 @@
 
         <!-- Wedding rings illustration -->
         <div class="flex justify-center shrink-0">
-          <WeddingRings />
+          <MonogramJE />
         </div>
 
         <!-- Floating pink hearts -->
