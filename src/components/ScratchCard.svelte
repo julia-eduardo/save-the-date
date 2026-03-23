@@ -8,7 +8,7 @@
   /** Called on the first pointerdown event (for parent to fade instruction text). */
   export let onFirstScratch = () => {};
 
-  const BRUSH_RADIUS = 40;
+  const BRUSH_RADIUS = 18;
   const REVEAL_THRESHOLD = 60;
 
   let wrapper;
