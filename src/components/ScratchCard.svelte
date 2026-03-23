@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { getRevealPercentage } from '../lib/scratch-utils.js';
-  import { playScratchSound } from '../lib/scratch-sound.js';
+  import { playScratchSound, initScratchSound } from '../lib/scratch-sound.js';
 
   /** Called after the reveal animation completes. */
   export let onRevealed = () => {};
@@ -83,6 +83,7 @@
     if (!firstScratchFired) {
       firstScratchFired = true;
       onFirstScratch();
+      initScratchSound(); // preload audio on first interaction
     }
     canvas.setPointerCapture(e.pointerId);
     scratch(e.clientX, e.clientY);

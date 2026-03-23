@@ -1,47 +1,42 @@
 let audioCtx = null;
+let audioBuffer = null;
 let lastPlayed = 0;
-const THROTTLE_MS = 50;
+const THROTTLE_MS = 80;
 
-/**
- * Plays a short scratch sound via Web Audio API.
- * Throttled to once per THROTTLE_MS.
- */
+async function loadBuffer() {
+  if (audioBuffer) return audioBuffer;
+  if (!audioCtx) audioCtx = new AudioContext();
+  const response = await fetch(`${import.meta.env.BASE_URL}scratching-paper.mp3`);
+  const arrayBuffer = await response.arrayBuffer();
+  audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+  return audioBuffer;
+}
+
+// Preload on first user interaction
+export async function initScratchSound() {
+  if (!audioCtx) audioCtx = new AudioContext();
+  await loadBuffer();
+}
+
 export function playScratchSound() {
   const now = Date.now();
   if (now - lastPlayed < THROTTLE_MS) return;
   lastPlayed = now;
 
-  if (!audioCtx) {
-    audioCtx = new AudioContext();
-  }
-
-  // Resume if suspended (browser autoplay policy)
-  if (audioCtx.state === 'suspended') {
-    audioCtx.resume();
-  }
-
-  const sampleRate = audioCtx.sampleRate;
-  const bufferSize = Math.floor(sampleRate * 0.04); // 40ms of noise
-  const buffer = audioCtx.createBuffer(1, bufferSize, sampleRate);
-  const data = buffer.getChannelData(0);
-  for (let i = 0; i < bufferSize; i++) {
-    data[i] = (Math.random() * 2 - 1) * 0.25;
-  }
+  if (!audioCtx || !audioBuffer) return;
+  if (audioCtx.state === 'suspended') audioCtx.resume();
 
   const source = audioCtx.createBufferSource();
-  source.buffer = buffer;
+  source.buffer = audioBuffer;
 
-  // Band-pass filter to shape scratch timbre
-  const filter = audioCtx.createBiquadFilter();
-  filter.type = 'bandpass';
-  filter.frequency.value = 2000;
-  filter.Q.value = 0.5;
+  // Start from a random offset so repeated scratches don't sound looped
+  const maxOffset = Math.max(0, audioBuffer.duration - 0.12);
+  source.playbackRate.value = 0.9 + Math.random() * 0.2; // slight pitch variation
 
   const gain = audioCtx.createGain();
-  gain.gain.value = 0.4;
+  gain.gain.value = 0.8;
 
-  source.connect(filter);
-  filter.connect(gain);
+  source.connect(gain);
   gain.connect(audioCtx.destination);
-  source.start();
+  source.start(0, Math.random() * maxOffset, 0.12); // play 120ms slice
 }
