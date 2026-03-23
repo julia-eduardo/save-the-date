@@ -3,6 +3,7 @@
   import WeddingRings from '../components/illustrations/WeddingRings.svelte';
   import HeartPink from '../components/illustrations/HeartPink.svelte';
   import HeartSmall from '../components/illustrations/HeartSmall.svelte';
+  import WavyCard from '../components/WavyCard.svelte';
 
   export let onRevealed = () => {};
 </script>
@@ -10,9 +11,8 @@
 <div class="min-h-dvh w-full flex items-center justify-center bg-cream"
   style="background-image: repeating-linear-gradient(to right, transparent, transparent 22px, #f9c8d4 22px, #f9c8d4 28px);">
 
-  <div class="relative w-full max-w-sm mx-4">
-    <div class="border-2 border-green-w rounded-xl p-1">
-      <div class="border border-green-w/40 rounded-lg p-6">
+  <div class="w-full max-w-sm mx-4">
+    <WavyCard>
 
         <!-- Wedding rings illustration -->
         <div class="flex justify-center mb-4">
@@ -48,7 +48,6 @@
           <HeartSmall size={18} />
         </div>
 
-      </div>
-    </div>
+    </WavyCard>
   </div>
 </div>

@@ -2,6 +2,7 @@
   import ScratchCard from '../components/ScratchCard.svelte';
   import HeartPink from '../components/illustrations/HeartPink.svelte';
   import Sparkle from '../components/illustrations/Sparkle.svelte';
+  import WavyCard from '../components/WavyCard.svelte';
 
   export let onRevealed = () => {};
 
@@ -17,10 +18,8 @@
 <div class="min-h-dvh w-full flex items-center justify-center bg-cream"
   style="background-image: repeating-linear-gradient(to right, transparent, transparent 22px, #f9c8d4 22px, #f9c8d4 28px);">
 
-  <div class="relative w-full max-w-sm mx-4">
-    <!-- Outer green heart-chain border -->
-    <div class="border-2 border-green-w rounded-xl p-1">
-      <div class="border border-green-w/40 rounded-lg p-6">
+  <div class="w-full max-w-sm mx-4">
+    <WavyCard>
 
         <!-- Decorative elements above scratch area -->
         <div class="flex justify-around items-center mb-4 px-4">
@@ -60,7 +59,6 @@
           <Sparkle size={12} color="#2d5a27" />
         </div>
 
-      </div>
-    </div>
+    </WavyCard>
   </div>
 </div>
