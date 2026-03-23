@@ -1,4 +1,5 @@
 <script>
+
   let w = 0;
   let h = 0;
 
@@ -37,6 +38,14 @@
 </script>
 
 <div class="relative h-full" bind:clientWidth={w} bind:clientHeight={h}>
+  <!-- Bow centered exactly on the top-left corner of the border -->
+  <img
+    src="{import.meta.env.BASE_URL}laco.png"
+    alt=""
+    aria-hidden="true"
+    class="absolute z-10 pointer-events-none"
+    style="width: 140px; top: 10px; left: 10px; transform: translate(-50%, -42%);"
+  />
   {#if w && h}
     <svg
       class="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
